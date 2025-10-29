@@ -90,3 +90,45 @@ if ('IntersectionObserver' in window) {
         imageObserver.observe(img);
     });
 }
+
+// Lightbox functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
+const galleryItems = document.querySelectorAll('.gallery-item img');
+
+// Open lightbox when gallery image is clicked
+galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+        lightbox.classList.add('active');
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+});
+
+// Close lightbox when close button is clicked
+lightboxClose.addEventListener('click', closeLightbox);
+
+// Close lightbox when clicking outside the image
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox function
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Re-enable scrolling
+    setTimeout(() => {
+        lightboxImg.src = '';
+    }, 300);
+}
