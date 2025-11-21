@@ -74,11 +74,13 @@ tushar-portfolio/
 ## 🎭 Experience
 
 **Professional Work:**
+
 - Theatre: The Eagle Has Fallen, Father of 669, Anda Cell
 - TV Serials: Lapandav, Gharoghari Matichya Chuli (Star Pravah)
 - Films: Valentine (Marathi), Virgin Tree (Hindi), Happy Teacher's Day (Hindi)
 
 **Training:**
+
 - Acting Diploma - Cinecraft Film & TV Institute
 - Multiple workshops with industry professionals
 
