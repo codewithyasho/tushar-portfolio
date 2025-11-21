@@ -157,7 +157,39 @@
             <p>• <strong>Happy Teacher's Day</strong> - Hindi Film</p>
           </div>
           <div class="content-image">
-            <img src="images/img-4.jpg" alt="Film" />
+
+            
+            <!-- Carousel -->
+            <div class="carousel">
+              <div class="carousel-container">
+                <div class="carousel-slide active">
+                  <img src="images/c1.jpg" alt="Film & TV 1" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/c2.jpg" alt="Film & TV 2" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/c3.jpg" alt="Film & TV 3" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/c4.jpg" alt="Film & TV 4" />
+                </div>
+              </div>
+              <!-- Navigation Arrows -->
+              <button class="carousel-btn prev" onclick="moveSlide(-1)">
+                &#10094;
+              </button>
+              <button class="carousel-btn next" onclick="moveSlide(1)">
+                &#10095;
+              </button>
+              <!-- Dots -->
+              <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -297,12 +329,6 @@
     </section>
 
     <!-- MONOLOGUE Section -->
-
-
-
-    
-
-    <!-- MONOLOGUE Section -->
     <section id="monologue" class="featured-video">
       <div class="container">
         <h2 class="section-title">MONOLOGUE</h2>
@@ -331,7 +357,9 @@
         </div>
         <p class="video-caption">Acting Television - Tushar Waghmare</p>
       </div>
-    </section>    <!-- Footer -->
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="social-icons">

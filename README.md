@@ -1,114 +1,98 @@
-# Portfolio Website
+# Tushar Waghmare - Actor Portfolio
 
-A professional portfolio website inspired by modern artist portfolios, featuring a clean and elegant design with smooth animations and responsive layout.
+A professional portfolio website showcasing the acting career of Tushar Waghmare, featuring theatre performances, films, television work, and more.
 
-## Features
+## 🎭 About
 
-- **Responsive Design**: Works perfectly on all devices (desktop, tablet, mobile)
-- **Smooth Animations**: Fade-in effects and smooth scrolling
-- **Clean Layout**: Professional and modern design
-- **Easy to Customize**: Simple HTML, CSS, and JavaScript
+This is a responsive portfolio website for Tushar Waghmare, a professional actor with 5 years of experience in theatre, films, and television. Based in Pune/Mumbai, specializing in Marathi, Hindi, and English performances.
 
-## Structure
+## ✨ Features
+
+- **Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
+- **Image Carousel** - Sliding carousel in Films & Television section
+- **Gallery with Lightbox** - Click to view images in full screen
+- **Video Sections** - Embedded YouTube monologue and local video player
+- **Smooth Animations** - Fade-in effects and smooth scrolling
+- **Social Media Integration** - Instagram and YouTube links
+- **Mobile Optimized** - Designed with mobile users as primary audience
+
+## 📂 Project Structure
 
 ```
 tushar-portfolio/
-│
 ├── index.html          # Main HTML file
 ├── styles.css          # Stylesheet
-├── script.js           # JavaScript for interactions
-└── README.md          # This file
+├── script.js           # JavaScript functionality
+├── README.md           # This file
+├── images/             # Image assets
+│   ├── img-1.jpg to img-16.jpg
+│   └── c1.jpg to c4.jpg (carousel images)
+└── videos/             # Video files
+    └── television.mp4
 ```
 
-## Customization Guide
+## 🎬 Sections
 
-### 1. Personal Information
+1. **Home** - Hero section with introduction
+2. **Education** - Acting diploma and workshops
+3. **Theatre** - Stage productions
+4. **Films & Television** - Movies and TV serials with carousel
+5. **Interested In** - Available work types
+6. **Gallery** - Professional photos with lightbox
+7. **About** - Personal details and physical attributes
+8. **Contact** - Get in touch section
+9. **Monologue** - YouTube video showcase
+10. **Television** - Local video player
 
-In `index.html`, replace:
-- "YOUR NAME" with your actual name
-- Update the title in the `<title>` tag
-- Update the introduction text in the `.intro` section
-- Update the copyright text in the footer
+## 🚀 Getting Started
 
-### 2. Images
+1. Open `index.html` in a web browser
+2. No build process or dependencies required
+3. All assets should be in their respective folders
 
-Replace the placeholder Unsplash images with your own:
-- Hero section image
-- Featured section image
-- Music section image
-- Film section image
-- Books section image
+## 📱 Responsive Breakpoints
 
-### 3. Video
+- **Desktop**: 1024px and above
+- **Tablet**: 768px - 1023px
+- **Mobile**: 480px - 767px
+- **Small Mobile**: Below 480px
 
-Replace the YouTube video embed link in the Featured Video section with your own video URL.
+## 🎨 Color Scheme
 
-### 4. Social Media Links
+- **Primary Purple**: #4a2c52
+- **Cream Background**: #f5f1ed
+- **Text Light**: #a99a9a
+- **White**: #ffffff
 
-Update the social media links in the footer with your actual profile URLs:
-- Instagram
-- Twitter
-- Facebook
-- YouTube
+## 📧 Contact
 
-### 5. Navigation Links
+- **Email**: tusharwaghmare781@gmail.com
+- **Instagram**: [@tushar_waghmare_17](https://www.instagram.com/tushar_waghmare_17)
+- **YouTube**: [@thoughtloop.official](https://www.youtube.com/@thoughtloop.official)
+- **Location**: Pune / Mumbai
 
-Update or add navigation sections based on your needs in the `<nav>` section.
+## 🎭 Experience
 
-### 6. Colors
+**Professional Work:**
+- Theatre: The Eagle Has Fallen, Father of 669, Anda Cell
+- TV Serials: Lapandav, Gharoghari Matichya Chuli (Star Pravah)
+- Films: Valentine (Marathi), Virgin Tree (Hindi), Happy Teacher's Day (Hindi)
 
-To change the color scheme, modify the CSS variables in `styles.css`:
+**Training:**
+- Acting Diploma - Cinecraft Film & TV Institute
+- Multiple workshops with industry professionals
 
-```css
-:root {
-    --purple-dark: #4a2c52;
-    --purple-medium: #6b4974;
-    --purple-light: #8b6a94;
-    --cream: #f5f1ed;
-    --text-light: #a99a9a;
-    --text-dark: #333;
-    --white: #ffffff;
-}
-```
+## 💻 Technologies Used
 
-## How to Use
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Google Fonts (Cinzel, Lato)
 
-1. Open the folder in VS Code
-2. Update all the content with your own information
-3. Replace images with your own photos
-4. Open `index.html` in a browser to preview
-5. Deploy to your hosting service (GitHub Pages, Netlify, Vercel, etc.)
+## 📄 License
 
-## Deployment Options
+© 2025 Tushar Waghmare - Actor
 
-### GitHub Pages
-1. Create a new repository on GitHub
-2. Push this code to the repository
-3. Go to Settings > Pages
-4. Select the main branch as source
-5. Your site will be live at `https://yourusername.github.io/repository-name`
+---
 
-### Netlify
-1. Sign up at netlify.com
-2. Drag and drop this folder to Netlify
-3. Your site will be live instantly
-
-### Vercel
-1. Sign up at vercel.com
-2. Import your GitHub repository
-3. Deploy with one click
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## License
-
-Free to use for personal and commercial projects.
-
-## Credits
-
-Design inspired by professional artist portfolios.
+**Built with ❤️ for showcasing acting talent**

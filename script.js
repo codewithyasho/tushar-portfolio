@@ -134,3 +134,50 @@ function closeLightbox() {
     lightboxImg.src = "";
   }, 300);
 }
+
+// Carousel functionality
+let currentSlideIndex = 1;
+showSlide(currentSlideIndex);
+
+// Auto-play carousel (optional - every 5 seconds)
+setInterval(() => {
+  moveSlide(1);
+}, 5000);
+
+function moveSlide(n) {
+  showSlide((currentSlideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlide((currentSlideIndex = n));
+}
+
+function showSlide(n) {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const dots = document.querySelectorAll(".dot");
+
+  if (n > slides.length) {
+    currentSlideIndex = 1;
+  }
+  if (n < 1) {
+    currentSlideIndex = slides.length;
+  }
+
+  // Hide all slides
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+
+  // Remove active from all dots
+  dots.forEach((dot) => {
+    dot.classList.remove("active");
+  });
+
+  // Show current slide and activate dot
+  if (slides[currentSlideIndex - 1]) {
+    slides[currentSlideIndex - 1].classList.add("active");
+  }
+  if (dots[currentSlideIndex - 1]) {
+    dots[currentSlideIndex - 1].classList.add("active");
+  }
+}
