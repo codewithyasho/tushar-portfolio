@@ -135,33 +135,55 @@ function closeLightbox() {
   }, 300);
 }
 
-// Carousel functionality
-let currentSlideIndex = 1;
-showSlide(currentSlideIndex);
+// Carousel functionality - Support for multiple carousels
+const carousels = document.querySelectorAll(".carousel");
+const carouselStates = new Map();
 
-// Auto-play carousel (optional - every 5 seconds)
-setInterval(() => {
-  moveSlide(1);
-}, 5000);
+carousels.forEach((carousel, index) => {
+  const carouselIndex = `carousel_${index}`;
+  carouselStates.set(carouselIndex, 1);
 
-function moveSlide(n) {
-  showSlide((currentSlideIndex += n));
+  showCarouselSlide(carousel, 1);
+
+  // Auto-play carousel (optional - every 5 seconds)
+  setInterval(() => {
+    moveCarouselSlide(carousel, 1);
+  }, 5000);
+});
+
+function moveCarouselSlide(carousel, n) {
+  const carouselIndex = Array.from(carousels).indexOf(carousel);
+  const key = `carousel_${carouselIndex}`;
+  const currentIndex = carouselStates.get(key) + n;
+  carouselStates.set(key, currentIndex);
+  showCarouselSlide(carousel, currentIndex);
 }
 
-function currentSlide(n) {
-  showSlide((currentSlideIndex = n));
+function currentCarouselSlide(carousel, n) {
+  const carouselIndex = Array.from(carousels).indexOf(carousel);
+  const key = `carousel_${carouselIndex}`;
+  carouselStates.set(key, n);
+  showCarouselSlide(carousel, n);
 }
 
-function showSlide(n) {
-  const slides = document.querySelectorAll(".carousel-slide");
-  const dots = document.querySelectorAll(".dot");
+function showCarouselSlide(carousel, n) {
+  const slides = carousel.querySelectorAll(".carousel-slide");
+  const dots = carousel.querySelectorAll(".dot");
 
-  if (n > slides.length) {
-    currentSlideIndex = 1;
+  if (slides.length === 0) return;
+
+  let slideIndex = n;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
   }
-  if (n < 1) {
-    currentSlideIndex = slides.length;
+  if (slideIndex < 1) {
+    slideIndex = slides.length;
   }
+
+  // Update state
+  const carouselIndex = Array.from(carousels).indexOf(carousel);
+  const key = `carousel_${carouselIndex}`;
+  carouselStates.set(key, slideIndex);
 
   // Hide all slides
   slides.forEach((slide) => {
@@ -174,10 +196,21 @@ function showSlide(n) {
   });
 
   // Show current slide and activate dot
-  if (slides[currentSlideIndex - 1]) {
-    slides[currentSlideIndex - 1].classList.add("active");
+  if (slides[slideIndex - 1]) {
+    slides[slideIndex - 1].classList.add("active");
   }
-  if (dots[currentSlideIndex - 1]) {
-    dots[currentSlideIndex - 1].classList.add("active");
+  if (dots[slideIndex - 1]) {
+    dots[slideIndex - 1].classList.add("active");
   }
+}
+
+// Wrapper functions for onclick handlers
+function moveSlide(n) {
+  const carousel = event.target.closest(".carousel");
+  moveCarouselSlide(carousel, n);
+}
+
+function currentSlide(n) {
+  const carousel = event.target.closest(".carousel");
+  currentCarouselSlide(carousel, n);
 }
